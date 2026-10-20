@@ -1,0 +1,46 @@
+{
+  "skill_name": "mom-test-ideation-toolkit",
+  "evals": [
+    {
+      "id": 1,
+      "name": "prepare-without-leading",
+      "skill": "ideation-prepare-interviews",
+      "prompt": "Prepare a reusable 15-minute discovery guide for an early AI reporting idea for sales teams. I want to ask: Would you buy an AI dashboard? How much would you pay? Which features should we build? We have no interviews yet and the segment is sales organizations with 25\u2013250 salespeople. The buyer may not be the user. Help me test whether this is a real priority, but do not invent customer facts or contact anyone.",
+      "expected_output": "Narrow segment provisionally, three learning goals including a fatal risk, past-event questions, missing payer/approver, optional not compulsory commitments.",
+      "assertions": [
+        "Repairs hypothetical pricing and purchase questions",
+        "Flags segment breadth and missing buyer",
+        "Uses three learning goals with a decision-changing uncertainty",
+        "Does not invent customer evidence or require payment in discovery"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "analyze-false-positives",
+      "skill": "ideation-analyze-interviews",
+      "prompt": "Analyze these synthetic notes as a training exercise; do not treat them as real market evidence. I1, enterprise manager, Oct 10: interviewer pitches first; participant says Amazing, I would definitely buy it for $100. Says weekly reporting is a disaster. Last Friday an intern spent 20 minutes; current process is okay. Wants Excel sync but no reason recorded. Might introduce boss when ready. I2, independent consultant, Oct 11: reports spending $300/month on an agency; last report needed two hours of rework; asks for a paid pilot, but no terms, date, payment, or acceptance recorded. Can we say everyone validated the idea?",
+      "expected_output": "Separate segments and source evidence; flag pitch, vague claims, missing motivations; no validation; ledger distinguishes interest from completed commitment.",
+      "assertions": [
+        "Labels the exercise synthetic and excludes it from real demand evidence",
+        "Separates enterprise and consultant evidence",
+        "Does not count $100 hypothetical as spend or willingness-to-pay proof",
+        "Does not count offered introduction or pilot inquiry as completed commitment",
+        "Preserves concrete contrary evidence and unknown feature motivation"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "next-experiment-product-risk",
+      "skill": "ideation-next-experiments",
+      "prompt": "Training scenario, not real interviews: five bar owners said they would pay if we bring 50 extra customers on quiet Tuesdays. We have no audience, no tested delivery channel, and no records of current promotion spend or buying approvals. Team wants another 20 interviews and a large app build. Recommend the next experiment with a $200 maximum budget and one week. Do not launch it or promise results.",
+      "expected_output": "Identify distribution risk, propose a bounded manual channel/delivery test conditional on permissions and terms, retain missing payer/behavior questions, predeclare observable outcomes without universal validation threshold.",
+      "assertions": [
+        "Separates conditional demand from ability to acquire and deliver customers",
+        "Does not prescribe fixed interview counts as validation",
+        "Recommends a feasible small test within proposed time and budget",
+        "Names missing baseline/purchase evidence and interpretable outcomes",
+        "Does not execute outreach or promise 50 customers"
+      ]
+    }
+  ]
+}
