@@ -10,13 +10,27 @@ Use the open-source [Skills CLI](https://github.com/vercel-labs/skills) to choos
 npx skills add NadavGrossman/the-mom-test-skills
 ```
 
-Install all three for Codex in the current project:
+Add `--global` for personal use across projects. The CLI requires Node.js 22.20 or newer. You can also copy any complete directory under `skills/` into your agent’s skill directory.
+
+### Claude Code
+
+Install all three in the current project:
+
+```sh
+npx skills add NadavGrossman/the-mom-test-skills --agent claude-code --yes
+```
+
+For manual installation, use `.claude/skills/` in a project or `~/.claude/skills/` for personal skills. See [Claude Code’s skill documentation](https://code.claude.com/docs/en/skills).
+
+### Codex
+
+Install all three in the current project:
 
 ```sh
 npx skills add NadavGrossman/the-mom-test-skills --agent codex --yes
 ```
 
-Add `--global` for personal use across projects. The CLI requires Node.js 22.20 or newer. Alternatively, copy any complete directory under `skills/` into your agent’s skill directory. For Codex, use `.agents/skills/` in a project or `~/.agents/skills/` for personal skills.
+For manual installation, use `.agents/skills/` in a project or `~/.agents/skills/` for personal skills.
 
 Each skill includes its own handbook, coverage checklist, and interview template. No runtime dependencies, cross-skill dependencies, or access to this repository are required after installation. Tools for Drive, transcripts, or other sources are supplied by the host agent when needed.
 
@@ -28,7 +42,15 @@ Each skill includes its own handbook, coverage checklist, and interview template
 | `ideation-analyze-interviews` | Separates behavioral evidence from praise, speculation, and uncompleted commitments. | “Analyze these interview notes and show what they support, contradict, or leave unknown.” |
 | `ideation-next-experiments` | Recommends the smallest useful test of the next important uncertainty. | “Given these findings, what should we test next before building?” |
 
-Invoke a skill explicitly in Codex CLI with `$ideation-prepare-interviews`, `$ideation-analyze-interviews`, or `$ideation-next-experiments`. Other agents use their own skill selector or matching behavior.
+### Claude Code
+
+Invoke a skill with `/ideation-prepare-interviews`, `/ideation-analyze-interviews`, or `/ideation-next-experiments`, followed by your request.
+
+### Codex
+
+Invoke a skill with `$ideation-prepare-interviews`, `$ideation-analyze-interviews`, or `$ideation-next-experiments`, followed by your request.
+
+Other agents use their own skill selector or matching behavior.
 
 Supply your idea or domain, current stage, decision, target customers, and existing evidence. The skills ask for missing context and leave unsupported claims unknown. They assist human interviews and team review; synthetic exercises are always labeled and excluded from demand evidence.
 

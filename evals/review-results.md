@@ -20,4 +20,15 @@ Three distinct scenarios were run both with the relevant skills and without them
 The baseline preparation guide omitted explicit three priority goals and a designated fatal assumption. Both configurations handled most traps. These small, partly non-discriminating tests support basic usability, not a claim that the skills always improve results or that every rule is behaviorally proven. No real customer demand was tested. Human review of the examples remains useful.
 
 ## Repository packaging verification
-The public package uses self-contained skill directories. A real Skills CLI copy installation into an isolated Codex project discovered and installed all three skills; their required references and templates resolved inside each installed folder. Canonical resources are synchronized with a dependency-free build/check script. Both reference files retain exactly R01–R39 in order. This verifies packaging and resource availability, not model behavior in every supported agent.
+The public package uses self-contained skill directories.
+
+### Claude Code
+A real Skills CLI copy installation into an isolated project discovered and installed all three skills in .claude/skills/. Their required references, checklist, and template were present inside each installed folder. This checks installation and resource availability, not model behavior within the application.
+
+### Codex
+A real Skills CLI copy installation into an isolated project discovered and installed all three skills; their required references and templates resolved inside each installed folder. Installation directly from the published GitHub repository also passed. This checks installation and resource availability, not model behavior within the application.
+
+Canonical resources are synchronized with a dependency-free build/check script. Both reference files retain exactly R01–R39 in order.
+
+## Public material audit
+The repository and its existing commit history contain original adaptations, synthetic examples, maintenance code, and a standard MIT license. No source PDF, extracted book text, scanned pages, third-party assets, or vendored packages are included. A normalized comparison against the supplied book found no matching passages of ten consecutive words in the original source files. The author and book attribution is retained; the license covers our original material, not the underlying book or branding.
