@@ -1,80 +1,55 @@
 # The Mom Test Skills
 
-Three portable agent skills for customer discovery and ideation, based on Rob Fitzpatrick’s *The Mom Test*.
+**Your agent can ship the product. Teach it to question the idea.**
+
+<a href="https://www.momtestbook.com/"><img src="https://www.momtestbook.com/og-image.jpg" alt="The Mom Test by Rob Fitzpatrick" width="760"></a>
+
+Turn customer conversations into evidence with three skills based on *The Mom Test*. For founders building with coding agents.
+
+| Skill | What you get |
+| --- | --- |
+| [Prepare interviews](skills/ideation-prepare-interviews/SKILL.md) | Questions that uncover real behavior. |
+| [Analyze interviews](skills/ideation-analyze-interviews/SKILL.md) | Facts, contradictions, and actual commitments. |
+| [Choose the next experiment](skills/ideation-next-experiments/SKILL.md) | A small test of the assumption that matters most. |
 
 ## Install
 
-Use the open-source [Skills CLI](https://github.com/vercel-labs/skills) to choose your coding agent and skills:
-
-```sh
-npx skills add NadavGrossman/the-mom-test-skills
-```
-
-Add `--global` for personal use across projects. The CLI requires Node.js 22.20 or newer. You can also copy any complete directory under `skills/` into your agent’s skill directory.
-
 ### Claude Code
-
-Install all three in the current project:
 
 ```sh
 npx skills add NadavGrossman/the-mom-test-skills --agent claude-code --yes
 ```
 
-For manual installation, use `.claude/skills/` in a project or `~/.claude/skills/` for personal skills. See [Claude Code’s skill documentation](https://code.claude.com/docs/en/skills).
+Start with `/ideation-prepare-interviews`, then describe your idea.
 
 ### Codex
-
-Install all three in the current project:
 
 ```sh
 npx skills add NadavGrossman/the-mom-test-skills --agent codex --yes
 ```
 
-For manual installation, use `.agents/skills/` in a project or `~/.agents/skills/` for personal skills.
+Start with `$ideation-prepare-interviews`, then describe your idea.
 
-Each skill includes its own handbook, coverage checklist, and interview template. No runtime dependencies, cross-skill dependencies, or access to this repository are required after installation. Tools for Drive, transcripts, or other sources are supplied by the host agent when needed.
+Node.js 22.20+. Add `--global` to use across projects. Each skill is self-contained.
 
-## Use
+## Inside
 
-| Skill | What it does | Example request |
-| --- | --- | --- |
-| `ideation-prepare-interviews` | Defines a focused segment, three learning goals, and neutral interview questions. | “Prepare discovery interviews for an early reporting tool for sales teams.” |
-| `ideation-analyze-interviews` | Separates behavioral evidence from praise, speculation, and uncompleted commitments. | “Analyze these interview notes and show what they support, contradict, or leave unknown.” |
-| `ideation-next-experiments` | Recommends the smallest useful test of the next important uncertainty. | “Given these findings, what should we test next before building?” |
+[Interview template](templates/interview-template.md) · [39 rules + coverage](references/coverage-checklist.md) · [Handbook](references/mom-test-handbook.md) · [Evaluations](evals/review-results.md)
 
-### Claude Code
+The agents help you prepare, interpret, and decide. Customer evidence comes from real people.
 
-Invoke a skill with `/ideation-prepare-interviews`, `/ideation-analyze-interviews`, or `/ideation-next-experiments`, followed by your request.
+<details>
+<summary>Contributing</summary>
 
-### Codex
-
-Invoke a skill with `$ideation-prepare-interviews`, `$ideation-analyze-interviews`, or `$ideation-next-experiments`, followed by your request.
-
-Other agents use their own skill selector or matching behavior.
-
-Supply your idea or domain, current stage, decision, target customers, and existing evidence. The skills ask for missing context and leave unsupported claims unknown. They assist human interviews and team review; synthetic exercises are always labeled and excluded from demand evidence.
-
-## Included
-
-- [Interview template](templates/interview-template.md), including a five-minute pocket version.
-- [Handbook](references/mom-test-handbook.md) and [coverage checklist](references/coverage-checklist.md): 39 explicit rules of thumb and 73 additional guidance entries, with PDF and printed page references.
-- [Synthetic evaluations](evals/evals.json), six sample responses, and [review results](evals/review-results.md).
-
-`skills/<name>/` contains a `SKILL.md`, `references/`, and `assets/`. Each folder can be installed on its own using the [Agent Skills format](https://agentskills.io/specification).
-
-## Maintain
-
-Edit the canonical handbook, coverage checklist, and template at the repository root. Then regenerate the bundled copies:
+Edit the canonical files in `references/` and `templates/`, then run:
 
 ```sh
 python3 scripts/sync_resources.py
 python3 scripts/sync_resources.py --check
 ```
 
-The check verifies metadata, all 39 rule IDs, and resource paths for each independently installed skill. Historical behavioral evaluations are synthetic smoke tests, not exhaustive proof of future agent behavior.
+</details>
 
-## Attribution
+---
 
-An independent, unofficial companion to *The Mom Test* by Rob Fitzpatrick. Instructions and prompts are original adaptations; the book and its PDF are not included. Agent evidence safeguards are identified separately from the book’s guidance.
-
-[MIT License](LICENSE) covers the original material in this repository. It grants no rights to the book or its branding.
+Unofficial companion to [*The Mom Test* by Rob Fitzpatrick](https://www.momtestbook.com/). Book image hosted on the author’s site; the book itself is not included. [MIT](LICENSE) covers our original material only.
