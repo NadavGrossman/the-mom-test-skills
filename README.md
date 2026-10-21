@@ -32,10 +32,6 @@ Start with `$ideation-prepare-interviews`, then describe your idea.
 
 Node.js 22.20+. Add `--global` to use across projects. Each skill is self-contained.
 
-## Inside
-
-[Interview template](templates/interview-template.md) · [39 rules + coverage](references/coverage-checklist.md) · [Handbook](references/mom-test-handbook.md) · [Evaluations](evals/review-results.md)
-
 The agents help you prepare, interpret, and decide. Customer evidence comes from real people.
 
 <details>
